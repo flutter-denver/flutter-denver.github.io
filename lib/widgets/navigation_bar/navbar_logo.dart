@@ -35,17 +35,20 @@ class NavBarLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveBuilder(
-      builder: (context, sizingInformation) {
-        return sizingInformation.isMobile
-            ? _textLogo()
-            : SizedBox(
-                height: 100,
-                width: 200,
-                child: Image.asset(
-                    'assets/images/logos/flutter_denver_logo_200x100.png'),
-              );
-      },
-    );
+    final size = MediaQuery.of(context).size;
+    print('Size: $size');
+    return _textLogo();
+    // return ResponsiveBuilder(
+    //   builder: (context, sizingInformation) {
+    //     return sizingInformation.isMobile
+    //         ? _textLogo() : _textLogo();
+    //         // : SizedBox(
+    //         //     height: 100,
+    //         //     width: 200,
+    //         //     child: Image.asset(
+    //         //         'assets/images/logos/flutter_denver_logo_200x100.png'),
+    //         //   );
+    //   },
+    // );
   }
 }

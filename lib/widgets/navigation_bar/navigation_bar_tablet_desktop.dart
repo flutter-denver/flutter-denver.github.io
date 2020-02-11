@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_denver/routing/route_names.dart';
+import 'package:flutter_denver/routing/router.dart';
 import 'package:flutter_denver/widgets/navigation_bar/navbar_item.dart';
 import 'package:flutter_denver/widgets/navigation_bar/navbar_logo.dart';
 
@@ -9,24 +9,20 @@ class NavigationBarTabletDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(bottom: 2.5),
-      decoration: BoxDecoration(
-        border:
-            Border(bottom: BorderSide(width: 1, color: Colors.grey.shade600)),
-      ),
+      padding: const EdgeInsets.only(top: 0, bottom: 12),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.baseline,
+        textBaseline: TextBaseline.ideographic,
         children: <Widget>[
           NavBarLogo(),
           Row(
-            mainAxisSize: MainAxisSize.min,
+            // mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              NavBarItem('Events', EventsRoute),
-              SizedBox(
-                width: 60,
-              ),
-              NavBarItem('About', AboutRoute),
+              NavBarItem('Home', Routes.home),
+              NavBarItem('Events', Routes.events),
+              NavBarItem('Members', Routes.members),
+              NavBarItem('About', Routes.about),
             ],
           )
         ],

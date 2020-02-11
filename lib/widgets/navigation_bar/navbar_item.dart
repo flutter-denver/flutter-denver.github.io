@@ -13,9 +13,12 @@ class NavBarItem extends StatelessWidget {
       onTap: () {
         locator<NavigationService>().navigateTo(navigationPath);
       },
-      child: Text(
-        title,
-        style: TextStyle(fontSize: 18),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 44.0),
+        child: Text(
+          title,
+          style: TextStyle(fontSize: 18),
+        ),
       ),
     );
   }

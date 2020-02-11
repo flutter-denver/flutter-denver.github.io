@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_denver/locator.dart';
-import 'package:flutter_denver/routing/route_names.dart';
 import 'package:flutter_denver/routing/router.dart';
 import 'package:flutter_denver/services/navigation_service.dart';
 import 'package:flutter_denver/widgets/centered_view/centered_view.dart';
@@ -25,7 +24,7 @@ class LayoutTemplate extends StatelessWidget {
                 child: Navigator(
                   key: locator<NavigationService>().navigatorKey,
                   onGenerateRoute: generateRoute,
-                  initialRoute: HomeRoute,
+                  initialRoute: Routes.home,
                 ),
               )
             ],

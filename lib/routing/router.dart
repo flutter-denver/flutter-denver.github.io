@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_denver/routing/route_names.dart';
 import 'package:flutter_denver/views/about/about_view.dart';
 import 'package:flutter_denver/views/events/events_view.dart';
 import 'package:flutter_denver/views/home/home_view.dart';
+import 'package:flutter_denver/views/members/members_view.dart';
+
+// Route names
+class Routes {
+  static const String home = '/';
+  static const String about = '/about';
+  static const String events = '/events';
+  static const String members = '/members';
+}
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   print('generateRoute: ${settings.name}');
   switch (settings.name) {
-    case HomeRoute:
+    case Routes.home:
       return _getPageRoute(HomeView(), settings);
-    case AboutRoute:
+    case Routes.about:
       return _getPageRoute(AboutView(), settings);
-    case EventsRoute:
+    case Routes.events:
       return _getPageRoute(EventsView(), settings);
+    case Routes.members:
+      return _getPageRoute(MembersView(), settings);
     default:
       return _getPageRoute(HomeView(), settings);
   }
