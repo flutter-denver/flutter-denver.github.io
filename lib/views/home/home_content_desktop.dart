@@ -1,10 +1,14 @@
-import 'dart:html';
+// import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_denver/widgets/event_details/event_details.dart';
 
 class HomeContentDesktop extends StatelessWidget {
   const HomeContentDesktop({Key key}) : super(key: key);
+
+  static const _headerColor = Color(0xbb23aeff);
+
+  static const _meetupLogo = 'assets/images/logos/meetup_logo_script.png';
 
   static const TextStyle _headerStyle1 = TextStyle(
     color: Colors.white,
@@ -26,8 +30,8 @@ class HomeContentDesktop extends StatelessWidget {
   Widget _header() {
     return IntrinsicHeight(
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 14),
-        color: Colors.blue[300],
+        padding: EdgeInsets.fromLTRB(0, 28, 0, 14),
+        color: _headerColor,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,12 +39,22 @@ class HomeContentDesktop extends StatelessWidget {
           children: <Widget>[
             Expanded(
               flex: 50,
-              child: Container(
-                alignment: Alignment.center,
-                child: Text(
-                  'Next Meetup Event',
-                  style: _headerStyle1,
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Next',
+                    style: _headerStyle1,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(12, 12, 12, 0),
+                    child: Image.asset(_meetupLogo, height: 64),
+                  ),
+                  Text(
+                    'Event',
+                    style: _headerStyle1,
+                  ),
+                ],
               ),
             ),
             Expanded(flex: 5, child: Container()),
@@ -70,7 +84,7 @@ class HomeContentDesktop extends StatelessWidget {
       children: <Widget>[
         _header(),
         Expanded(
-                  child: Container(
+          child: Container(
             alignment: Alignment.bottomCenter,
             // height: 400,
             child: EventDetails(),

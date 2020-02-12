@@ -20,8 +20,12 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # Enforce stronger lint rules.
-  pedantic: ^1.8.0+1
+  # The provider widget from the provider package is a key component in
+  # the separation of the model data from the view widgets of the UI.
+  provider: ^4.0.3
+
+  # Widgets for displaying blocks of text formatted using Markdown.
+  flutter_markdown: ^0.3.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -36,14 +40,17 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  pedantic: ^1.8.0+1
 
+dependency_overrides:
+  # Enforce stronger lint rules.
+  pedantic: ^1.9.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -53,6 +60,7 @@ flutter:
   assets:
     - assets/images/logos/flutter_denver_logo_200x100.png
     - assets/images/logos/flutter_denver_logo_400x200.png
+    - assets/images/logos/meetup_logo_script.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -74,6 +82,5 @@ flutter:
           weight: 700
         - asset: assets/fonts/Lato-Black.ttf
           weight: 900
-
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

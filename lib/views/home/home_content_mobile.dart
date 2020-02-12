@@ -12,7 +12,7 @@ class HomeContentMobile extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         CourseDetails(),
-        SizedBox(height: 100,),
+        SizedBox(height: 100),
         CallToAction('Download Presentation'),
       ],
     );
