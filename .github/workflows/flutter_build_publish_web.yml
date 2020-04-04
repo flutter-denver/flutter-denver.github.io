@@ -25,6 +25,7 @@ jobs:
     - run: |
         cp CNAME build/web/CNAME
         cd build/web
+        curl -i https://api.meetup.com/flutter-denver/events > events.json
         git init
         git config --global user.email denverflutter@gmail.com
         git config --global user.name denverflutter
